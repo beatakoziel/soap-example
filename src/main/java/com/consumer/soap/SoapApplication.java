@@ -17,12 +17,10 @@ public class SoapApplication {
     CommandLineRunner lookup(TrackClient quoteClient) {
         return args -> {
             String name = "Beata";
-
             if (args.length > 0)
                 name = args[0];
-
             WitajResponse response = quoteClient.getWitaj(name);
-            System.err.println(response.getReturn().getName());
+            System.out.println(response.getReturn().getValue());
         };
     }
 }

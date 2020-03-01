@@ -63,6 +63,7 @@ dependencies {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
     }
     implementation 'org.springframework.ws:spring-ws-core'
+    implementation 'org.apache.commons:commons-text:1.8'
     // For Java 11:
     implementation 'org.glassfish.jaxb:jaxb-runtime'
     compile(files(genJaxb.classesDir).builtBy(genJaxb))
@@ -72,15 +73,9 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
 }
 
 test {
     useJUnitPlatform()
 }
-
-// tag::bootjar[]
-bootJar {
-    baseName = 'gs-consuming-web-service'
-    version = '0.0.1'
-}
-// end::bootjar[]
